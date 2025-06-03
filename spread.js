@@ -4,7 +4,7 @@ const estudante = {
     cpf: '12312313332',
     turma: 'Javascript',
     bolsista: true,
-    telefones: ['5511999998888', '551999202939'],
+    telefones: ['5511999998888', '5519992502939'],
     enderecos: [{
         rua: 'Rua Joseph Climber',
         numero: '45',
@@ -23,3 +23,11 @@ function exibirTelefones(telefone1, telefone2) {
 }
 
 exibirTelefones(estudante.telefones[0], estudante.telefones[1]);
+exibirTelefones(...estudante.telefones);
+
+const dadosEnvio = {
+    destinatario: estudante.nome,
+    ...estudante.enderecos[0]
+}
+
+console.log(dadosEnvio);
